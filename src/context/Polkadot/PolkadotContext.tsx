@@ -58,7 +58,7 @@ export const PolkadotProvider = ({ children, config }: { children: JSX.Element, 
     try {
       localStorage.setItem(
         LOCAL_STORAGE_NAME,
-        JSON.stringify({ metaName, account: address }),
+        JSON.stringify({ metaName, address }),
       );
       setAddress(getFormatAddress(address, config.prefix));
     } catch (e) {
