@@ -1,15 +1,15 @@
-import { InjectedExtension} from "@polkadot/extension-inject/types";
+import {InjectedAccountWithMeta, InjectedExtension} from "@polkadot/extension-inject/types";
 import {ApiPromise} from "@polkadot/api";
 import {ApiOptions} from "@polkadot/api/types";
 
 export interface PolkadotContextType {
   address: string | undefined;
-  addresses: string[]
+  addresses: InjectedAccountWithMeta[]
   injector: InjectedExtension | undefined;
-  connect: (metaName?: string) => void;
+  connect: (metaName?: string) => Promise<InjectedAccountWithMeta[]>;
   disconnect: () => void
   selectAddress: (address: string) => void;
-  api: ApiPromise;
+  api: ApiPromise | undefined;
 }
 
 export interface ConfigType {
