@@ -1,0 +1,47 @@
+{
+  "name": "@rebase-agency/react-polkadot-connect",
+  "version": "0.1.0",
+  "description": "",
+  "repository": {
+    "url": ""
+  },
+  "keywords": [
+    "react",
+    "polkadot",
+    "polkadot-api",
+    "web3"
+  ],
+  "author": "@rebase-agency",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@polkadot/api": "^10.13.1",
+    "@polkadot/extension-dapp": "^0.46.9",
+    "@polkadot/extension-inject": "^0.46.9",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.14.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  }
+}
