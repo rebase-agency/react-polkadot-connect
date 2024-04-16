@@ -1,16 +1,19 @@
 {
   "name": "@rebase-agency/react-polkadot-connect",
   "version": "0.1.0",
-  "description": "",
+  "description": "Polkadot API provider and hooks with account for React dApp",
   "repository": {
-    "url": ""
+    "type": "git",
+    "url": "https://github.com/rebase-agency/react-polkadot-connect"
   },
+  "homepage": "https://github.com/rebase-agency/react-polkadot-connect",
   "keywords": [
     "react",
     "polkadot",
     "polkadot-api",
     "web3"
   ],
+  "license": "MIT",
   "author": "@rebase-agency",
   "engines": {
     "node": ">=20"
