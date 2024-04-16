@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, JSX } from "react";
+import React, { createContext, useState, useEffect, JSX } from "react";
 import {AccountStorageType, ConfigType, PolkadotContextType} from "./types";
 import {InjectedAccountWithMeta, InjectedExtension} from "@polkadot/extension-inject/types";
 import {ApiPromise} from "@polkadot/api";
