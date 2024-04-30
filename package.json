@@ -1,6 +1,6 @@
 {
   "name": "@rebase-agency/react-polkadot-connect",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Polkadot API provider and hooks with account for React dApp",
   "repository": {
     "type": "git",
