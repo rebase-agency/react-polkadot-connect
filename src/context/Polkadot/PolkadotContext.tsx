@@ -29,28 +29,37 @@ export const PolkadotProvider = ({ children, config }: { children: JSX.Element, 
     metaName: string = "polkadot-js",
   ): Promise<InjectedAccountWithMeta[]> => {
     try {
-      const extensions = await web3Enable(config.appName);
+      const extensions = await web3Enable("Curio Parachain");
 
       if (extensions.length) {
         const allAccounts = await web3Accounts();
-
-        // get accounts from certain wallet extension
-        const walletAccounts = allAccounts.filter(
-          (item) => item.meta.source === metaName,
-        );
-        // if accounts found we set wallet name for using in dapp
-        setMetaName(walletAccounts.length ? metaName : undefined);
-        setAddresses(walletAccounts);
-        return walletAccounts
-      } else {
-        setMetaName(undefined);
-        setAddresses([])
-        return []
+        if (window.walletExtension?.isNovaWallet) {
+          if (metaName === "nova-wallet") {
+            setMetaName(allAccounts.length ? metaName : undefined);
+            setAddresses(allAccounts)
+            return allAccounts;
+          } else {
+            setAddresses([]);
+            return [];
+          }
+        } else {
+          // get accounts from certain wallet extension
+          const walletAccounts = allAccounts.filter(
+            (item) => item.meta.source === metaName,
+          );
+          // if accounts found we set wallet name for using in dapp
+          setMetaName(walletAccounts.length ? metaName : undefined);
+          setAddresses(walletAccounts);
+          return walletAccounts;
+        }
       }
+      setMetaName(undefined);
+      setAddresses([])
+      return [];
     } catch (e) {
       setMetaName(undefined);
       setAddresses([])
-      return []
+      return [];
     }
   };
 
